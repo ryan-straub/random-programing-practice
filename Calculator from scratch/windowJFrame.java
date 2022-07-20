@@ -10,7 +10,6 @@ public class windowJFrame{
     static int screenWidth = 400;
 
     static String num;
-    static int num_placement = 0;
 
     static JFrame frame;
     static JPanel panel;
@@ -41,6 +40,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "1";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -65,6 +66,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "2";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -88,6 +91,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "3";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -111,6 +116,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "4";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -135,6 +142,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "5";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -159,6 +168,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "6";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -182,6 +193,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "7";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -205,6 +218,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "8";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -228,6 +243,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "9";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -251,6 +268,8 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 num = num + "0";
                 label.setText(num);
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
 
             }
         });
@@ -277,6 +296,8 @@ public class windowJFrame{
                 mathFunctions.setSign('+');
                 mathFunctions.insert_variable(num);
                 label.setText("+");
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
                 num = "";
             }
         });
@@ -301,6 +322,8 @@ public class windowJFrame{
                 mathFunctions.setSign('-');
                 mathFunctions.insert_variable(num);
                 label.setText("-");
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
                 num = "";
             }
         });
@@ -325,6 +348,8 @@ public class windowJFrame{
                 mathFunctions.setSign('*');
                 mathFunctions.insert_variable(num);
                 label.setText("*");
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
                 num = "";
             }
         });
@@ -349,14 +374,40 @@ public class windowJFrame{
             public void actionPerformed(ActionEvent e) {
                 mathFunctions.setSign('/');
                 mathFunctions.insert_variable(num);
-                label.setText("/");
+                label.setText("0");
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
+                num = "";
+            }
+        });
+    }
+
+    //Resets number to 0
+    public static void c(){
+        
+        button = new JButton("C");
+        button.setBounds(100, 340, 50, 50);
+
+        label = new JLabel();
+        label.setBounds(100, 30, 325,50);  
+
+        frame.add(button);
+        frame.setLayout(null);
+        frame.add(label);
+
+        //Sets current value of calc to 1
+        button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                label.setText("0");
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
                 num = "";
             }
         });
     }
 
 
-    //Adds the + button
+    //Adds the = button
     public static void equal(){
         
         button = new JButton("=");
@@ -373,6 +424,8 @@ public class windowJFrame{
         button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 label.setText(mathFunctions.solve(num));
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
             }
         });
     }
@@ -395,12 +448,8 @@ public class windowJFrame{
         multiply();
         divide();
         equal();
+        c();
     }
-
-    // public void paint(Graphics g){
-    //     g.drawRect(100, 100, 200, 200);
-    // }
-
 
     public static void main(String[] args){
 
