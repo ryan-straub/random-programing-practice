@@ -5,6 +5,20 @@ static int var_pos = 0;
 static int new_num;
 static char symbol;
 
+
+
+//UNUSED METHOD
+// static String num = "";
+
+//     public static String numberBuild(char digit){
+//         if(digit == '1'){
+//             num = num + "1";
+//             System.out.print(num);
+//         }
+//         return num;
+//     }
+
+
     //Stores 2 variables in an array
     public static void insert_variable(String number1){
         int stringNum = Integer.parseInt(number1);

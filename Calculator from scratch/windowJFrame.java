@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,6 +28,7 @@ public class windowJFrame{
         button.setBounds(20, 100, 50, 50);
 
         label = new JLabel();
+
         label.setBounds(100, 30,325,50);  
 
         frame.add(button);
@@ -395,18 +397,25 @@ public class windowJFrame{
         equal();
     }
 
+    // public void paint(Graphics g){
+    //     g.drawRect(100, 100, 200, 200);
+    // }
+
+
     public static void main(String[] args){
 
-        
         //Starting character in Calculator
         num = "";
 
         //Creates application window
         frame = new JFrame();
+        frame.getContentPane().setBackground(Color.BLUE);
+        // frame.getContentPane().add(new graphicsJPanel());
         frame.setSize(screenWidth, screenHeight);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Calculator");
         frame.setVisible(true);
+        
         createButtons();
     }
 }
