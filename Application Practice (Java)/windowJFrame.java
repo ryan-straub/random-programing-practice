@@ -235,7 +235,7 @@ public class windowJFrame{
     public static void zero(){
         
         button = new JButton("0");
-        button.setBounds(20, 280, 50, 50);
+        button.setBounds(20, 280, 175, 50);
 
         label = new JLabel();
         label.setBounds(100, 30,325,50);  
@@ -247,7 +247,7 @@ public class windowJFrame{
         //Sets current value of calc to 9
         button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                num = num + "9";
+                num = num + "0";
                 label.setText(num);
 
             }
@@ -280,11 +280,85 @@ public class windowJFrame{
         });
     }
 
+    //Adds the - button
+    public static void minus(){
+        
+        button = new JButton("-");
+        button.setBounds(200, 160, 50, 50);
+
+        label = new JLabel();
+        label.setBounds(100, 30, 325,50);  
+
+        frame.add(button);
+        frame.setLayout(null);
+        frame.add(label);
+
+        //Sets current value of calc to 1
+        button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                mathFunctions.setSign('-');
+                mathFunctions.insert_variable(num);
+                label.setText("-");
+                num = "";
+            }
+        });
+    }
+
+    //Adds the * button
+    public static void multiply(){
+        
+        button = new JButton("*");
+        button.setBounds(200, 220, 50, 50);
+    
+        label = new JLabel();
+        label.setBounds(100, 30, 325,50);  
+    
+        frame.add(button);
+        frame.setLayout(null);
+        frame.add(label);
+    
+        //Sets current value of calc to 1
+        button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                mathFunctions.setSign('*');
+                mathFunctions.insert_variable(num);
+                label.setText("*");
+                num = "";
+            }
+        });
+    }
+
+        
+    //Adds the / button
+    public static void divide(){
+        
+        button = new JButton("/");
+        button.setBounds(200, 280, 50, 50);
+
+        label = new JLabel();
+        label.setBounds(100, 30, 325,50);  
+
+        frame.add(button);
+        frame.setLayout(null);
+        frame.add(label);
+
+        //Sets current value of calc to 1
+        button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                mathFunctions.setSign('/');
+                mathFunctions.insert_variable(num);
+                label.setText("/");
+                num = "";
+            }
+        });
+    }
+
+
     //Adds the + button
     public static void equal(){
         
         button = new JButton("=");
-        button.setBounds(200, 280, 50, 50);
+        button.setBounds(200, 340, 50, 50);
 
         label = new JLabel();
         label.setBounds(100, 30, 325,50);  
@@ -315,6 +389,9 @@ public class windowJFrame{
         zero();
 
         plus();
+        minus();
+        multiply();
+        divide();
         equal();
     }
 
