@@ -38,17 +38,38 @@ static char symbol;
         variables[var_pos] = stringNum;
 
         if(symbol == '+'){
-           new_num = variables[0] + variables[1];
+            new_num = add(variables[0], variables[1]);
         }else if(symbol == '-'){
-            new_num = variables[0] - variables[1];
+            new_num = subtract(variables[0], variables[1]);
         }else if(symbol == '/'){
-            new_num = variables[0] / variables[1];
+            new_num = divide(variables[0], variables[1]);
         }else if(symbol =='*'){
-            new_num = variables[0] * variables[1];
+            new_num = mult(variables[0], variables[1]);
         }
         var_pos = 0;
-        String numString =Integer.toString(new_num);
+        String numString = Integer.toString(new_num);
         return numString;
-}
+    }
+
+    public static int mult(int num1, int num2){
+        int num3 = num1 * num2;
+        return num3;
+    }
+
+    public static int add(int num1, int num2){
+        int num3 = num1 + num2;
+        return num3;
+    }
+
+    public static int subtract(int num1, int num2){
+        int num3 = num1 - num2;
+        return num3;
+    }
+
+    public static int divide(int num1, int num2){
+        int num3 = num1 / num2;
+        return num3;
+    }
+
 
 }

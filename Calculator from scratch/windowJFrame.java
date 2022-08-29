@@ -354,8 +354,7 @@ public class windowJFrame{
             }
         });
     }
-
-        
+       
     //Adds the / button
     public static void divide(){
         
@@ -390,7 +389,7 @@ public class windowJFrame{
 
         label = new JLabel();
         label.setBounds(100, 30, 325,50);  
-
+        
         frame.add(button);
         frame.setLayout(null);
         frame.add(label);
@@ -406,6 +405,29 @@ public class windowJFrame{
         });
     }
 
+    //Resets number to 0
+    public static void negative(){
+        
+        button = new JButton("+/-");
+        button.setBounds(260, 100, 50, 50);
+
+        label = new JLabel();
+        label.setBounds(100, 30, 325,50);  
+
+        frame.add(button);
+        frame.setLayout(null);
+        frame.add(label);
+
+        //Sets current value of calc to 1
+        button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                num = num + "0";
+                label.setFont(new Font("Arial", Font.BOLD, 30));
+                label.setForeground(Color.WHITE);
+                num = "";
+            }
+        });
+    }
 
     //Adds the = button
     public static void equal(){
@@ -449,6 +471,7 @@ public class windowJFrame{
         divide();
         equal();
         c();
+        negative();
     }
 
     public static void main(String[] args){
